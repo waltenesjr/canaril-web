@@ -1,0 +1,9 @@
+<div class="jumbotron">
+    <h1 class="mb-2">Deseja realmente deletar o canário?</h1>
+    <p class="lead"><strong>Anel:</strong> {{contato.anel}}</p>
+    <p class="lead"><strong>Gaiola:</strong> {{contato.gaiola}}</p>
+    <p class="lead"><strong>Data de Aninhamento:</strong> {{contato.dataAninlhamento}}</p>
+    <hr class="my-4">
+    <a routerLink="/contatos" class="btn btn-primary mr-3" style="width: 100px;">Não</a>
+    <button type="button" (click)="deletarContato()" class="btn btn-danger" style="width: 100px;">Sim</button>
+</div>

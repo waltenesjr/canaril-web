@@ -1,0 +1,35 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Digite um Anel / Gaiola / Sexo / Pai / Mãe" aria-label="Digite um Anel / Gaiola / Sexo / Pai / Mãe" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+  </div>
+</div>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Lista de Canários</li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/contato/novo">Adicionar Novo</a></li>
+    </ol>
+    </nav>
+    
+    <table class="table">    
+      <thead>
+        <tr>
+          <th scope="col">Anel</th>
+          <th scope="col">Gaiola</th>
+          <th scope="col">Data de aninhamento</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contato of filtrarContatos">
+          <td>{{contato.anel}}</td>
+          <td>{{contato.gaiola}}</td>
+          <td>{{contato.dataAninlhamento}}</td>
+          <td>
+            <a [routerLink]="['', 'contato', contato.id, 'editar']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+            <a [routerLink]="['', 'contato', contato.id, 'deletar']" class="btn btn-outline-danger btn-sm mr-2">Deletar</a>     
+          </td>
+        </tr>
+      </tbody>
+    </table>
